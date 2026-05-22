@@ -7,7 +7,7 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded] = useFonts({
-    "Jakarta-bold": require("../assets/fonts/PlusJakartaSans-Bold.ttf"),
+    "Jakarta-Bold": require("../assets/fonts/PlusJakartaSans-Bold.ttf"),
     "Jakarta-ExtraBold": require("../assets/fonts/PlusJakartaSans-ExtraBold.ttf"),
     "Jakarta-ExtraLight": require("../assets/fonts/PlusJakartaSans-ExtraLight.ttf"),
     "Jakarta-Light": require("../assets/fonts/PlusJakartaSans-Light.ttf"),
@@ -17,23 +17,17 @@ export default function RootLayout() {
   });
 
   useEffect(() => {
-    async function prepare() {
-      if (loaded) {
-        await SplashScreen.hideAsync();
-      }
+    if (loaded) {
+      SplashScreen.hideAsync();
     }
-
-    prepare();
   }, [loaded]);
 
-  if (!loaded) return null;
-
   return (
-    <Stack>
-      <Stack.Screen name="index" options={{ headerShown: false }} />
-      <Stack.Screen name="(root)" options={{ headerShown: false }} />
-      <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-      <Stack.Screen name="+not-found" />
-    </Stack>
+    <>
+      <Stack>
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+      </Stack>
+    </>
   );
 }
