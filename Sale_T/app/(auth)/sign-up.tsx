@@ -1,3 +1,4 @@
+import CustomButton from "@/components/CustomButton";
 import InputField from "@/components/InputField";
 import { icons, images } from "@/constants";
 import { Link } from "expo-router";
