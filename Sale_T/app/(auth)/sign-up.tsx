@@ -1,5 +1,6 @@
 import CustomButton from "@/components/CustomButton";
 import InputField from "@/components/InputField";
+import Oauth from "@/components/Oauth";
 import { icons, images } from "@/constants";
 import { Link } from "expo-router";
 import { useState } from "react";
@@ -56,14 +57,11 @@ const SignUp = () => {
           />
           <CustomButton
             title="Registrarse"
-            onPress={() => {
-              // Aquí iría la lógica para manejar el registro del usuario
-              console.log("Formulario de registro:", form);
-            }}
-            className="bg-blue-500 py-3 rounded-full mt-5"
+            onPress={onSignUpPress}
+            className="mt-6"
           />
 
-          {/* Aquí podrías agregar un enlace para redirigir a la pantalla de inicio de sesión */}
+          <Oauth />
 
           <Link
             href="/(auth)/sign-in"
