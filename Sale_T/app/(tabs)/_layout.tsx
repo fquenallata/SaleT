@@ -29,10 +29,10 @@ const TabIcon = ({
   );
 };
 
-const layout = () => {
+const Layout = () => {
   return (
     <Tabs
-      initialRouteName="index"
+      initialRouteName="vender"
       screenOptions={{
         tabBarActiveTintColor: "white",
         tabBarInactiveTintColor: "white",
@@ -54,7 +54,7 @@ const layout = () => {
       }}
     >
       <Tabs.Screen
-        name="Vender"
+        name="vender"
         options={{
           title: "Vender",
           headerShown: false,
@@ -64,9 +64,9 @@ const layout = () => {
         }}
       />
       <Tabs.Screen
-        name="Productos"
+        name="productos"
         options={{
-          title: "Productos",
+          title: "productos",
           headerShown: false,
           tabBarIcon: ({ focused }) => (
             <TabIcon focused={focused} source={icons.products} />
@@ -74,9 +74,9 @@ const layout = () => {
         }}
       />
       <Tabs.Screen
-        name="Historial"
+        name="historial"
         options={{
-          title: "Historial",
+          title: "historial",
           headerShown: false,
           tabBarIcon: ({ focused }) => (
             <TabIcon focused={focused} source={icons.list} />
@@ -84,9 +84,9 @@ const layout = () => {
         }}
       />
       <Tabs.Screen
-        name="Configuración"
+        name="ajustes"
         options={{
-          title: "Configuración",
+          title: "ajustes",
           headerShown: false,
           tabBarIcon: ({ focused }) => (
             <TabIcon focused={focused} source={icons.settings} />
@@ -97,4 +97,4 @@ const layout = () => {
   );
 };
 
-export default layout;
+export default Layout;
