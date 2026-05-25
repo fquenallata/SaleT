@@ -2,7 +2,7 @@ import CustomButton from "@/components/CustomButton";
 import InputField from "@/components/InputField";
 import Oauth from "@/components/Oauth";
 import { icons, images } from "@/constants";
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import { useState } from "react";
 import { Image, ScrollView, Text, View } from "react-native";
 
@@ -13,9 +13,10 @@ const SignUp = () => {
     password: "",
   });
 
-  const onSignUpPress = async () => {
-    // Aquí iría la lógica para manejar el registro del usuario
-    console.log("Formulario de registro:", form);
+  const router = useRouter();
+
+  const onSignUpPress = () => {
+    router.replace("/(tabs)/vender");
   };
 
   return (
